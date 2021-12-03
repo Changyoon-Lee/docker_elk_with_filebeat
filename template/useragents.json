@@ -1,0 +1,58 @@
+{
+    "index_patterns": ["recon-useragents*"],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "character_sets": {
+                    "type": "keyword"
+                },
+                "cpu": {
+                    "type": "keyword"
+                },
+                "dst_cc": {
+                    "type": "keyword"
+                },
+                "dst_ip_addr": {
+                    "type": "ip"
+                },
+                "dst_port": {
+                    "type": "keyword"
+                },
+                "languages": {
+                    "type": "keyword"
+                },
+                "src_cc": {
+                    "type": "keyword"
+                },
+                "src_ip_addr": {
+                    "type": "ip"
+                },
+                "src_port": {
+                    "type": "keyword"
+                },
+                "timestamp": {
+                    "type": "date"
+                },
+                "user_agent": {
+                    "type": "keyword"
+                },
+                "via": {
+                    "type": "keyword"
+                },
+                "x_forwarded_for": {
+                    "type": "ip"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

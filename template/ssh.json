@@ -1,0 +1,51 @@
+{
+    "index_patterns": [
+        "recon-ssh_info*"
+    ],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "add_timestamp": {
+                    "type": "date"
+                },
+                "asn": {
+                    "type": "keyword"
+                },
+                "cc": {
+                    "type": "keyword"
+                },
+                "city": {
+                    "type": "keyword"
+                },
+                "ip_addr": {
+                    "type": "ip"
+                },
+                "key": {
+                    "type": "keyword"
+                },
+                "os_version": {
+                    "type": "keyword"
+                },
+                "ssh_version": {
+                    "type": "keyword"
+                },
+                "timestamp": {
+                    "type": "date"
+                },
+                "type": {
+                    "type": "keyword"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

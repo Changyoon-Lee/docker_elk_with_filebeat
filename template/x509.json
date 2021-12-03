@@ -1,0 +1,90 @@
+{
+    "index_patterns": [
+        "recon-x509_certs*"
+    ],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "altnames": {
+                    "type": "keyword"
+                },
+                "c": { 
+                    "type": "keyword"
+                },
+                "cc": {
+                    "type": "keyword"
+                },
+                "cn": {
+                    "type": "keyword"
+                },
+                "email": {
+                    "type": "keyword"
+                },
+                "hosname": {
+                    "type": "keyword"
+                },
+                "ip_addr": {
+                    "type": "ip"
+                },
+                "issuer": {
+                    "type": "keyword"
+                },
+                "issuer_c": {
+                    "type": "keyword"
+                },
+                "issuer_cn": {
+                    "type": "keyword"
+                },
+                "issuer_o": {
+                    "type": "keyword"
+                },
+                "md5": {
+                    "type": "keyword"
+                },
+                "not_after": {
+                    "type": "keyword"
+                },
+                "not_before": {
+                    "type": "keyword"
+                },
+                "o": {
+                    "type": "keyword"
+                },
+                "pem": {
+                    "type": "keyword"
+                },
+                "port": {
+                    "type": "keyword"
+                },
+                "serial": {
+                    "type": "keyword"
+                },
+                "sha1": {
+                    "type": "keyword"
+                },
+                "sig_algo": {
+                    "type": "keyword"
+                },
+                "subject": {
+                    "type": "keyword"
+                },
+                "timestamp": {
+                    "type": "date"
+                },
+                "version": {
+                    "type": "keyword"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

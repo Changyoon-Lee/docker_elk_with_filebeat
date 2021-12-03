@@ -1,0 +1,65 @@
+# 파일 하나 추가할때마다 input filter output 모두 각각 추가
+
+input {
+	file {
+		path => "/data/flows-*.csv"
+		start_position => "beginning"
+		add_field => { "[@metadata][type]" => "flows" }
+	}
+
+	file {
+		path => "/data/apt_dns-*.csv"
+		start_position => "beginning"
+		add_field => { "[@metadata][type]" => "apt_dns" }
+	}
+}
+
+## Add your filters / logstash plugins configuration here
+
+filter {
+	if "No results" in [message] {
+		drop {}
+	}
+	if [@metadata][type] == "flows" {
+		csv {
+			columns => [ "timestamp","src_ip_addr","src_cc","dst_ip_addr","dst_cc","proto","src_port","dst_port","tcp_flags","num_pkts","num_octets" ]
+			skip_header => "true"
+			skip_empty_columns => "true"
+			separator => ","
+		}
+	}
+	else if [@metadata][type] == "apt_dns" {
+		csv {
+			columns => [ "timestamp", "dnsrr", "ip_addr", "cc", "type", "ttl" ]
+			skip_header => "true"
+			separator => ","
+		}
+	}
+	date {
+		match => [ "timestamp", "yyyy-MM-dd HH:mm:ss" ]
+		target => "timestamp"
+	}
+	mutate {
+		remove_field => [ "@timestamp", "@version", "path", "message", "host" ]
+	}
+	
+}
+
+
+output {
+	file {
+		path => "/tmp/logstash_debug.log"
+	}
+	if [@metadata][type] == "flows" {
+		elasticsearch {
+			hosts => "elasticsearch:9200"
+			index => "recon-Flows"
+		}
+	}
+	else if [@metadata][type] == "apt_dns" {
+		elasticsearch {
+			hosts => "elasticsearch:9200"
+			index => "recon-Apt_Threats_DNS"
+		}
+	}
+}

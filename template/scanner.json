@@ -1,0 +1,47 @@
+{
+    "index_patterns": [
+        "recon-scanner*"
+    ],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "asn": {
+                    "type": "keyword"
+                },
+                "cc": {
+                    "type": "keyword"
+                },
+                "interval_probes_unique_dst_ip": {
+                    "type": "float"
+                },
+                "interval_probes_unique_ports": {
+                    "type": "keyword"
+                },"interval_slash8_visited": {
+                    "type": "float"
+                },
+                "ip_addr": {
+                    "type": "ip"
+                },
+                "ports": {
+                    "type": "keyword"
+                },
+                "proto": {
+                    "type": "keyword"
+                },
+                "total_ips_probed": {
+                    "type": "keyword"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

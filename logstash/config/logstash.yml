@@ -4,9 +4,12 @@
 #
 http.host: "0.0.0.0"
 xpack.monitoring.elasticsearch.hosts: [ "http://elasticsearch:9200" ]
-
+# path.data : /var/lib/logstash
+# path.logs : /var/log/logstash
 ## X-Pack security credentials
 #
-xpack.monitoring.enabled: true
-xpack.monitoring.elasticsearch.username: elastic
-xpack.monitoring.elasticsearch.password: changeme
+#xpack.monitoring.enabled: true
+#xpack.monitoring.elasticsearch.username: elastic
+#xpack.monitoring.elasticsearch.password: changeme
+#
+pipeline.workers: 4

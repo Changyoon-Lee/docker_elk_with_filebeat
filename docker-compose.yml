@@ -14,12 +14,15 @@ services:
       - type: volume
         source: elasticsearch
         target: /usr/share/elasticsearch/data
+      - type: bind
+        source: ./template
+        target: /usr/share/elasticsearch/template
+        read_only: false
     ports:
       - "9200:9200"
       - "9300:9300"
     environment:
-      ES_JAVA_OPTS: "-Xmx256m -Xms256m"
-      ELASTIC_PASSWORD: changeme
+      ES_JAVA_OPTS: "-Xmx2g -Xms2g"
       # Use single node discovery in order to disable production mode and avoid bootstrap checks.
       # see: https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
       discovery.type: single-node
@@ -46,7 +49,7 @@ services:
       - "5000:5000/udp"
       - "9600:9600"
     environment:
-      LS_JAVA_OPTS: "-Xmx256m -Xms256m"
+      LS_JAVA_OPTS: "-Xmx2g -Xms2g"
     networks:
       - elk
     depends_on:
@@ -69,6 +72,22 @@ services:
     depends_on:
       - elasticsearch
 
+  filebeat:
+    build:
+      context: ./filebeat
+    volumes:
+      - type: bind
+        source: ./data
+        target: /data
+        read_only: false
+      - type: bind
+        source: ./filebeat/filebeat.yml 
+        target: /usr/share/filebeat/filebeat.yml
+        read_only: true
+    networks:
+      - elk
+    depends_on:
+      - logstash
 networks:
   elk:
     driver: bridge

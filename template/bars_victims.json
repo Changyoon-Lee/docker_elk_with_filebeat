@@ -1,0 +1,57 @@
+{
+    "index_patterns": [
+        "recon-bars_observed_infected_victims*"
+    ],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "asn": {
+                    "type": "keyword"
+                },
+                "controller_cc": {
+                    "type": "keyword"
+                },
+                "controller_ip_addr": {
+                    "type": "keyword"
+                },
+                "controller_port": {
+                    "type": "keyword"
+                },
+                "family": {
+                    "type": "keyword"
+                },
+                "host_cc": {
+                    "type": "keyword"
+                },
+                "host_ip_addr": {
+                    "type": "ip"
+                },
+                "port": {
+                    "type": "keyword"
+                },
+                "proto": {
+                    "type": "keyword"
+                },
+                "reputation_score": {
+                    "type": "float"
+                },
+                "subfamily": {
+                    "type": "keyword"
+                },
+                "timestamp": {
+                    "type": "date"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

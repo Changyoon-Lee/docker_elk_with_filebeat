@@ -1,0 +1,33 @@
+{
+    "index_patterns": [
+        "recon-nmap_reverse_dns_lookups*"
+    ],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "cc": {
+                    "type": "keyword"
+                },
+                "dnsrr": {
+                    "type": "keyword"
+                },
+                "ip_addr": {
+                    "type": "ip"
+                },
+                "timestamp": {
+                    "type": "date"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

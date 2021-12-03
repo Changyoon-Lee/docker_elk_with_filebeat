@@ -1,0 +1,51 @@
+{
+    "index_patterns": [
+        "recon-os_fingerprinting*"
+    ],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "comment": {
+                    "type": "keyword"
+                },
+                "description": {
+                    "type": "keyword"
+                },
+                "dst_cc": {
+                    "type": "keyword"
+                },
+                "dst_ip_addr": {
+                    "type": "ip"
+                },
+                "dst_port": {
+                    "type": "keyword"
+                },
+                "os": {
+                    "type": "keyword"
+                },
+                "src_cc": {
+                    "type": "keyword"
+                },
+                "src_ip_addr": {
+                    "type": "ip"
+                },
+                "src_port": {
+                    "type": "keyword"
+                },
+                "timestamp": {
+                    "type": "date"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

@@ -1,0 +1,15 @@
+filebeat.inputs:
+  - 
+    paths:
+      - /data/flows-*.csv
+    fields_under_root: true
+    fields:
+      types: flows
+    exclude_lines: ["^#"]
+   
+output.logstash:
+  hosts: ["logstash:5044"]
+
+processors:
+  - drop_fields:
+      fields: [ "agent", "log", "ecs", "tags", "host", "input" ]

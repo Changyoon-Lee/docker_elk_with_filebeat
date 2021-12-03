@@ -1,0 +1,33 @@
+{
+    "index_patterns": [
+        "recon-nmap_os_fingerprinting*"
+    ],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "cc": {
+                    "type": "keyword"
+                },
+                "ip_addr": {
+                    "type": "ip"
+                },
+                "os": {
+                    "type": "keyword"
+                },
+                "timestamp": {
+                    "type": "date"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

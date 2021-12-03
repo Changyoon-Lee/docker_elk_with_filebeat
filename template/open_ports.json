@@ -1,0 +1,48 @@
+{
+    "index_patterns": [
+        "recon-open_ports*"
+    ],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "asn": {
+                    "type": "keyword"
+                },
+                "asname": {
+                    "type": "keyword"
+                },
+                "cc": {
+                    "type": "keyword"
+                },
+                "data": {
+                    "type": "keyword"
+                },
+                "ip_addr": {
+                    "type": "ip"
+                },
+                "port": {
+                    "type": "keyword"
+                },
+                "proto": {
+                    "type": "keyword"
+                },
+                "service": {
+                    "type": "keyword"
+                },
+                "timestamp": {
+                    "type": "date"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

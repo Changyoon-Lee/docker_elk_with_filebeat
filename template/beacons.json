@@ -1,0 +1,48 @@
+{
+    "index_patterns": [
+        "recon-beacons*"
+    ],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "client_cc": {
+                    "type": "keyword"
+                },
+                "client_ip_addr": {
+                    "type": "ip"
+                },
+                "proto": {
+                    "type": "keyword"
+                },
+                "server_cc": {
+                    "type": "keyword"
+                },
+                "server_comment": {
+                    "type": "keyword"
+                },
+                "server_ip_addr": {
+                    "type": "ip"
+                },
+                "server_port": {
+                    "type": "keyword"
+                },
+                "timestamp": {
+                    "type": "date"
+                },
+                "type": {
+                    "type": "keyword"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}
