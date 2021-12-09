@@ -1,0 +1,103 @@
+{
+    "index_patterns": ["recon-proxies*"],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "authority": {
+                    "type": "keyword"
+                },
+                "bad_exit": {
+                    "type": "keyword"
+                },
+                "cc": {
+                    "type": "keyword"
+                },
+                "contact": {
+                    "type": "keyword"
+                },
+                "dir_port": {
+                    "type": "keyword"
+                },
+                "exit": {
+                    "type": "keyword"
+                },
+                "fast": {
+                    "type": "keyword"
+                },
+                "fingerprint": {
+                    "type": "keyword"
+                },
+                "guard": {
+                    "type": "keyword"
+                },
+                "hibernation": {
+                    "type": "keyword"
+                },
+                "hs_dir": {
+                    "type": "keyword"
+                },
+                "ip_addr": {
+                    "type": "ip"
+                },
+                "ipv6_addr": {
+                    "type": "ip"
+                },
+                "ipv6_cc": {
+                    "type": "keyword"
+                },
+                "named": {
+                    "type": "keyword"
+                },
+                "or_port": {
+                    "type": "keyword"
+                },
+                "platform": {
+                    "type": "keyword"
+                },
+                "portlist": {
+                    "type": "keyword"
+                },
+                "published": {
+                    "type": "keyword"
+                },
+                "router_name": {
+                    "type": "keyword"
+                },
+                "running": {
+                    "type": "keyword"
+                },
+                "stable": {
+                    "type": "keyword"
+                },
+                "timestamp": {
+                    "type": "date"
+                },
+                "uptime": {
+                    "type": "float"
+                },
+                "v2_dir": {
+                    "type": "keyword"
+                },
+                "valid": {
+                    "type": "keyword"
+                },
+                "version": {
+                    "type": "keyword"
+                },
+                "weight": {
+                    "type": "keyword"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

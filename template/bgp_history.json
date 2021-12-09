@@ -1,0 +1,37 @@
+{
+    "index_patterns": ["recon-bgp_history*"],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "asname": {
+                    "type": "keyword"
+                },
+                "cc_origin": {
+                    "type": "keyword"
+                },
+                "cc_prefix": {
+                    "type": "keyword"
+                },
+                "origin": {
+                    "type": "keyword"
+                },
+                "prefix": {
+                    "type": "keyword"
+                },
+                "tiemstamp": {
+                    "type": "date"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

@@ -1,0 +1,103 @@
+{
+    "index_patterns": ["recon-sip_info*"],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "accept": {
+                    "type": "keyword"
+                },
+                "allow": {
+                    "type": "keyword"
+                },
+                "contact_cc": {
+                    "type": "keyword"
+                },
+                "contact_display": {
+                    "type": "float"
+                },
+                "contact_ip_addr": {
+                    "type": "ip"
+                },
+                "contact_number": {
+                    "type": "float"
+                },
+                "contact_port": {
+                    "type": "keyword"
+                },
+                "dst_cc": {
+                    "type": "keyword"
+                },
+                "dst_ip_addr": {
+                    "type": "ip"
+                },
+                "from_cc": {
+                    "type": "keyword"
+                },
+                "from_display": {
+                    "type": "float"
+                },
+                "from_ip_addr": {
+                    "type": "ip"
+                },
+                "from_number": {
+                    "type": "float"
+                },
+                "from_port": {
+                    "type": "keyword"
+                },
+                "response": {
+                    "type": "keyword"
+                },
+                "server": {
+                    "type": "keyword"
+                },
+                "session_owner": {
+                    "type": "keyword"
+                },
+                "sip_response": {
+                    "type": "keyword"
+                },
+                "sip_response_code": {
+                    "type": "float"
+                },
+                "src_cc": {
+                    "type": "keyword"
+                },
+                "src_ip_addr": {
+                    "type": "ip"
+                },
+                "timestamp": {
+                    "type": "date"
+                },
+                "to_cc": {
+                    "type": "keyword"
+                },
+                "to_display": {
+                    "type": "float"
+                },
+                "to_ip_addr": {
+                    "type": "ip"
+                },
+                "to_number": {
+                    "type": "float"
+                },
+                "to_port": {
+                    "type": "keyword"
+                },
+                "user_agent": {
+                    "type": "keyword"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

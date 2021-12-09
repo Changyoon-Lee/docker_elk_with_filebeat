@@ -1,0 +1,52 @@
+{
+    "index_patterns": ["recon-pdns_other_records*"],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "aa": {
+                    "type": "keyword"
+                },
+                "class": {
+                    "type": "keyword"
+                },
+                "ptoro": {
+                    "type": "keyword"
+                },
+                "qname": {
+                    "type": "keyword"
+                },
+                "rdata": {
+                    "type": "keyword"
+                },
+                "section": {
+                    "type": "keyword"
+                },
+                "src_cc": {
+                    "type": "keyword"
+                },
+                "src_ip_addr": {
+                    "type": "ip"
+                },
+                "timestamp": {
+                    "type": "date"
+                },
+                "ttl": {
+                    "type": "float"
+                },
+                "type": {
+                    "type": "keyword"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

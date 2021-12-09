@@ -46,7 +46,7 @@
                     "type": "keyword"
                 },
                 "x_forwarded_for": {
-                    "type": "ip"
+                    "type": "keyword"
                 }
             }
         }

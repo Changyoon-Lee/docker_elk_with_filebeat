@@ -1,0 +1,52 @@
+{
+    "index_patterns": ["recon-bgp_routing_snapshot*"],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "aspath": {
+                    "type": "keyword"
+                },
+                "bogon": {
+                    "type": "keyword"
+                },
+                "bogus_asn": {
+                    "type": "keyword"
+                },
+                "cc_asn": {
+                    "type": "keyword"
+                },
+                "cc_pfx": {
+                    "type": "keyword"
+                },
+                "pathlen": {
+                    "type": "float"
+                },
+                "prefix": {
+                    "type": "ip"
+                },
+                "prepend": {
+                    "type": "keyword"
+                },
+                "rir_asn": {
+                    "type": "keyword"
+                },
+                "rir_pfx": {
+                    "type": "keyword"
+                },
+                "sorce_asn": {
+                    "type": "keyword"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

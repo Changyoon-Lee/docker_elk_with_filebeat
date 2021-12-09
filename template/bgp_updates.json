@@ -1,0 +1,55 @@
+{
+    "index_patterns": ["recon-bgp_global_routing_updates*"],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "action": {
+                    "type": "keyword"
+                },
+                "aggregator_asn": {
+                    "type": "keyword"
+                },
+                "aggregator_ip_addr": {
+                    "type": "ip"
+                },
+                "aspath": {
+                    "type": "keyword"
+                },
+                "atomic_aggregate": {
+                    "type": "keyword"
+                },
+                "comunity": {
+                    "type": "keyword"
+                },
+                "ipv": {
+                    "type": "integer"
+                },
+                "multi_exit_disc": {
+                    "type": "keyword"
+                },
+                "network_cc": {
+                    "type": "keyword"
+                },
+                "network_ip_addr": {
+                    "type": "ip"
+                },
+                "origin": {
+                    "type": "float"
+                },
+                "timestamp": {
+                    "type": "date"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

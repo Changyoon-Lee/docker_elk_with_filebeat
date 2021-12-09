@@ -1,0 +1,55 @@
+{
+    "index_patterns": ["recon-port_scan*"],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "conection_count": {
+                    "type": "float"
+                },
+                "dst_cc": {
+                    "type": "keyword"
+                },
+                "dst_ip_addr": {
+                    "type": "ip"
+                },
+                "ip_count": {
+                    "type": "float"
+                },
+                "ip_range": {
+                    "type": "keyword"
+                },
+                "port_proto_count": {
+                    "type": "float"
+                },
+                "port_proto_range": {
+                    "type": "keyword"
+                },
+                "scan_msg": {
+                    "type": "keyword"
+                },
+                "scan_type": {
+                    "type": "keyword"
+                },
+                "src_cc": {
+                    "type": "keyword"
+                },
+                "src_ip_addr": {
+                    "type": "ip"
+                },
+                "timestamp": {
+                    "type": "date"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

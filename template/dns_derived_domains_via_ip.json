@@ -1,0 +1,37 @@
+{
+    "index_patterns": ["recon-dns_dervied_domains*"],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "first_seen": {
+                    "type": "date"
+                },
+                "last_seen": {
+                    "type": "date"
+                },
+                "query_term": {
+                    "type": "keyword"
+                },
+                "query_term_cc": {
+                    "type": "keyword"
+                },
+                "related_domain": {
+                    "type": "keyword"
+                },
+                "relations": {
+                    "type": "float"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

@@ -1,0 +1,49 @@
+{
+    "index_patterns": ["recon-dns_queries*"],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "class": {
+                    "type": "keyword"
+                },
+                "dst_cc": {
+                    "type": "keyword"
+                },
+                "dst_ip_addr": {
+                    "type": "ip"
+                },
+                "proto": {
+                    "type": "keyword"
+                },
+                "qname": {
+                    "type": "keyword"
+                },
+                "src_cc": {
+                    "type": "keyword"
+                },
+                "src_ip_addr": {
+                    "type": "ip"
+                },
+                "timestamp": {
+                    "type": "date"
+                },
+                "type": {
+                    "type": "keyword"
+                },
+                "zone": {
+                    "type": "keyword"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}

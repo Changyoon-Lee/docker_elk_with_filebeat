@@ -1,0 +1,37 @@
+{
+    "index_patterns": ["recon-router_information*"],
+    "template": {
+        "settings": {
+            "number_of_shards": 1
+        },
+        "mappings": {
+            "_source": {
+                "enabled": true
+            },
+            "properties": {
+                "cc": {
+                    "type": "keyword"
+                },
+                "ipa_addr": {
+                    "type": "ip"
+                },
+                "os_version": {
+                    "type": "keyword"
+                },
+                "processor": {
+                    "type": "keyword"
+                },
+                "timestamp": {
+                    "type": "date"
+                },
+                "vendor": {
+                    "type": "keyword"
+                }
+            }
+        }
+    },
+    "priority": 500,
+    "_meta": {
+        "description": "my custom"
+    }
+}
