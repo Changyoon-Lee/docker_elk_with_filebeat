@@ -1,0 +1,307 @@
+- 
+  paths:
+    - /data/flows-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: flows
+- 
+  paths:
+    - /data/apt_dns-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: apt_dns
+- 
+  paths:
+    - /data/apt_ip-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: apt_ip
+- 
+  paths:
+    - /data/banners-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: banners
+  multiline.pattern: '^\"[0-9]{4}-[0-9]{2}-[0-9]{2}'
+  multiline.negate: true
+  multiline.match: after
+- 
+  paths:
+    - /data/banners_ptr-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: banners_ptr
+- 
+  paths:
+    - /data/bars_controllers-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: bars_controllers
+- 
+  paths:
+    - /data/bars_victims-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: bars_victims
+- 
+  paths:
+    - /data/beacons-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: beacons
+- 
+  paths:
+    - /data/bgp_history-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: bgp_history
+- 
+  paths:
+    - /data/bgp_info-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: bgp_info
+- 
+  paths:
+    - /data/bgp_updates-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: bgp_updates
+- 
+  paths:
+    - /data/compromised_hosts-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: compromised_hosts
+- 
+  paths:
+    - /data/conpot_honeypot-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: conpot_honeypot
+- 
+  paths:
+    - /data/cookies-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: cookies
+- 
+  paths:
+    - /data/cowrie_honeypot-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: cowrie_honeypot
+- 
+  paths:
+    - /data/darknet-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: darknet
+- 
+  paths:
+    - /data/ddos_attacks-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: ddos_attacks
+- 
+  paths:
+    - /data/ddos_commands-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: ddos_commands
+- 
+  paths:
+    - /data/dns_derived_domains_via_ip-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: dns_derived_domains_via_ip
+- 
+  paths:
+    - /data/dns_derived_ips_via_ip-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: dns_derived_ips_via_ip
+- 
+  paths:
+    - /data/dns_fingerprint-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: dns_fingerprint
+- 
+  paths:
+    - /data/dns_query-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: dns_query
+- 
+  paths:
+    - /data/nmap_dnsrr-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: nmap_dnsrr
+- 
+  paths:
+    - /data/nmap_port-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: nmap_port
+- 
+  paths:
+    - /data/nmap_fingerprint-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: nmap_fingerprint
+- 
+  paths:
+    - /data/ntp_server-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: ntp_server
+- 
+  paths:
+    - /data/open_ports-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: open_ports
+- 
+  paths:
+    - /data/open_resolvers-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: open_resolvers
+- 
+  paths:
+    - /data/os_fingerprint-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: os_fingerprint
+- 
+  paths:
+    - /data/pdns-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: pdns
+- 
+  paths:
+    - /data/pdns_nxd-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: pdns_nxd
+- 
+  paths:
+    - /data/pdns_other-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: pdns_other
+- 
+  paths:
+    - /data/portscan-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: portscan
+- 
+  paths:
+    - /data/router-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: router
+- 
+  paths:
+    - /data/scanner-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: scanner
+- 
+  paths:
+    - /data/sip-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: sip
+  multiline.pattern: '^\"[0-9]{4}-[0-9]{2}-[0-9]{2}'
+  multiline.negate: true
+  multiline.match: after
+- 
+  paths:
+    - /data/snmp-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: snmp
+- 
+  paths:
+    - /data/ssh-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: ssh
+- 
+  paths:
+    - /data/spam_headers-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: spam_headers
+- 
+  paths:
+    - /data/urls-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: urls
+- 
+  paths:
+    - /data/useragents-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: useragents
+- 
+  paths:
+    - /data/tor-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: tor
+- 
+  paths:
+    - /data/x509-*.csv
+  ignore_older: 20m
+  fields_under_root: true
+  fields:
+    types: x509

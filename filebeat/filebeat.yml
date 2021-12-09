@@ -1,12 +1,11 @@
-filebeat.inputs:
-  - 
-    paths:
-      - /data/flows-*.csv
-    fields_under_root: true
-    fields:
-      types: flows
-    exclude_lines: ["^#"]
-   
+filebeat.config.inputs:
+  enabled: true
+  path: inputs.yml
+  reload.enabled: true
+  reload.period: 20s
+# filebeat.inputs:
+  
+
 output.logstash:
   hosts: ["logstash:5044"]
 
