@@ -4,7 +4,8 @@
 - elasticsearch, kibana : xpack 부분 주석처리
 - logstash : pipeline 수정, conf worker 4로 변경
 - docker-compose : elasticsearch,logstash jvm 2g로 변경,
-- filebeat 추가 : logstash port 5044 설정, conf파일 권한 설정변경(-rwxr-xr-x 로 안되어 있으면 실행오류남), processors - 필요없는 meta필드 drop
+- filebeat 추가 : logstash port 5044 설정, conf파일 권한 설정변경(-rwxr-xr-x 로 안되어 있으면 실행오류남, inputs.yml도 마찬가지), processors - 필요없는 meta필드 drop  
+	- 몇몇 log들 multiline 형태 파싱되도록 수정
 
 - template 폴더 : elasticsearch index template을 위한 json파일,, set_template.sh 를 통해 els에 해당 탬플릿들을 적용시킬수있도록 하였다.
 - ./data 폴더(filebeat: /data에 마운트함)에 원하는 데이터들을 넣으면 filebeat에서 harvest 시작할수있도록 하였다
